@@ -14,19 +14,27 @@ import { useRouter } from 'next/navigation';
 import style from './style.module.scss';
 import classNames from 'classnames';
 
+// Props interface for the 'NewUserForm' component.
 interface Props {
-  handleClose: () => void;
-  initialUser?: Omit<User, 'id'>;
+  handleClose: () => void; // Callback function to handle form closure.
+  initialUser?: Omit<User, 'id'>; // Initial user data for editing (optional).
 }
 
+// The 'NewUserForm' component definition.
 export function NewUserForm({ initialUser, handleClose }: Props) {
+  // Accessing the Next.js router instance.
   const router = useRouter();
+
+  // State to manage error messages in the form.
   const [errorMessage, setErrorMessage] = useState('');
-  const [user, setUser] = useState<Omit<User, 'id'>>(
-    initialUser || INITIAL_USER_DATA
-  );
+
+  // State to manage the user data in the form.
+  const [user, setUser] = useState(initialUser || INITIAL_USER_DATA);
+
+  // State to track whether the form is mounted or not.
   const [isMounted, setIsMounted] = useState(false);
 
+  // Function to close the form, its delayed to show an animation
   const close = () => {
     setIsMounted(false);
     setTimeout(() => {
@@ -34,19 +42,23 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
     }, 150);
   };
 
+  // Effect to set 'isMounted' to true when the component mounts.
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
+  // Function to handle form submission.
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Checking if the user data is valid.
     if (!isValidUser(user)) {
       setErrorMessage('Some of the fields are not valid');
       return;
     }
 
     try {
+      // If an initial user is provided, update the user; otherwise, create a new user.
       if (initialUser) {
         await updateUser(user);
       } else {
@@ -54,30 +66,32 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
       }
       close();
     } catch (err) {
-      setErrorMessage('Server error try again later');
+      // Handle server error.
+      setErrorMessage('Server error, try again later');
     }
 
+    // Refreshing the page using the router.
     router.refresh();
   };
 
+  // Function to handle the 'Escape' key press.
   const handleEscape: KeyboardEventHandler<HTMLFormElement> = (event) => {
     if (event.key === 'Escape') {
       close();
     }
   };
 
+  // Function to handle input changes in the form.
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value: string | number = event.target.value;
-    let key = event.target.name;
+    const key = event.target.name;
 
-    if (event.target.type === 'number') {
+    // Converting value to number if the input type is 'number'.
+    if (event.target.type === 'number' && value !== '') {
       value = Number(value);
     }
 
-    if (event.target.type === 'color') {
-      key = 'iconColor';
-    }
-
+    // Updating the user state.
     setUser((prevState) => ({
       ...prevState,
       [key]: value,
@@ -136,7 +150,7 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
         />
         <FormPair
           type='color'
-          id='color'
+          id='iconColor'
           text='Choose icon color'
           value={user.iconColor}
           onChange={onChange}
@@ -149,8 +163,10 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
             Cancel
           </button>
         </div>
+        {errorMessage && (
+          <div className={style.modal__error}>{errorMessage}</div>
+        )}
       </form>
-      {errorMessage && <div>{errorMessage}</div>}
     </div>
   );
 }

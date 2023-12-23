@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# User Management System
 
-## Getting Started
+This project is a simple user management system built with React and Next.js. It allows users to view a list of users, add new users, edit existing user information, and delete users.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To run the project locally, follow these steps:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the repository:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ````bash
+   git clone https://github.com/your-username/user-management-system.git
+   cd user-management-system```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ````
 
-## Learn More
+2. **Install dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   Copy code
+   npm install
+   Run the project:
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   Copy code
+   npm start
+   The application should now be accessible at http://localhost:3000. Open this URL in your browser to explore the user management system.
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Components
 
-## Deploy on Vercel
+### AddUser
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- A component showcasing state usage to display a modal for editing and adding new users.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### DeleteButton
+
+- Deletes an existing user.
+
+### EditButton
+
+- Opens a modal for editing user information.
+
+### Footer
+
+- A shared component across all pages with a link to the project's GitHub repository.
+
+### FormPair
+
+- A reusable component for form inputs.
+
+### Header
+
+- A shared component across all pages with a link to the homepage.
+
+### NewUserForm
+
+- A component for modifying existing user details or adding a new user.
+
+### Pair
+
+- A reusable component for displaying user information.
+
+### UserCard
+
+- Contains all information about a user.
+
+### UserIcons
+
+- A container for functional icons and user icons.
+
+## Components in Detail
+
+### NewUserForm Component
+
+Allows users to add or edit user information.
+
+### UserCard Component
+
+Displays user information, including their name, email, age, and a brief description.
+
+### UserIcons Component
+
+Provides icons for user-related actions, such as deleting or editing a user.
+
+## Utils
+
+### Constants
+
+- Used to maintain consistent constants across all components.
+
+### validateUser
+
+- Used for validating all keys of a new or edited user.
+
+## Production Dependencies
+
+- **axios (^1.6.2):** A popular library for making HTTP requests, likely used for handling API calls.
+- **classnames (^2.3.2):** A utility for conditionally joining class names together, useful for managing dynamic class names in React components.
+- **next (14.0.4):** A React framework that enables server-side rendering, automatic code splitting, and simpler configuration for React applications.
+- **react (^18):** The core React library for building user interfaces.
+- **react-dom (^18):** The ReactDOM library, necessary for rendering React components in the browser.
+
+## Development Dependencies
+
+- **@types/node (^20):** TypeScript type definitions for Node.js, required when using TypeScript in a Node.js environment.
+- **@types/react (^18):** TypeScript type definitions for React.
+- **@types/react-dom (^18):** TypeScript type definitions for ReactDOM.
+- **@typescript-eslint/eslint-plugin (^6.15.0):** ESLint plugin for TypeScript, providing linting rules specific to TypeScript code.
+- **@typescript-eslint/parser (^6.15.0):** ESLint parser for TypeScript, allowing ESLint to understand TypeScript syntax.
+- **eslint (^8.56.0):** A popular linting tool for identifying and fixing problems in JavaScript and TypeScript code.
+- **eslint-config-next (14.0.4):** ESLint configuration specific to Next.js projects.
+- **eslint-config-prettier (^9.1.0):** ESLint configuration for Prettier integration, ensuring ESLint and Prettier work seamlessly together.
+- **eslint-plugin-prettier (^5.1.1):** ESLint plugin that runs Prettier as an ESLint rule, enforcing consistent code formatting.
+- **sass (^1.69.5):** The Sass preprocessor, used for styling and defining styles in a more maintainable way.
+- **typescript (^5):** A superset of JavaScript that adds static typing, enhancing code quality and development experience.
+
+These dependencies are essential for both development and production, providing the necessary tools and libraries to build and maintain your Next.js application.

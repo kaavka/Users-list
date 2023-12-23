@@ -3,7 +3,7 @@ export const USERS_ENDPOINT = '/users';
 export const INITIAL_USER_DATA = {
   name: '',
   surname: '',
-  age: null,
+  age: '',
   email: '',
   about: '',
   iconColor: '#111111',

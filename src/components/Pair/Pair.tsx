@@ -5,6 +5,7 @@ interface Props {
   value: string;
 }
 
+// Reusable pair component
 export function Pair({ label, value }: Props) {
   return (
     <p className={style.pair}>

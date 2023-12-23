@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Users list',
   description: 'Made by kavvka',
 };
-
+// shared layout among all pages
 export default function RootLayout({
   children,
 }: {

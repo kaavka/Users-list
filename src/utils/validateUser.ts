@@ -1,5 +1,3 @@
-import { User } from '@/types/User';
-
 export function isValidUser({
   name,
   surname,
@@ -7,7 +5,14 @@ export function isValidUser({
   email,
   about,
   iconColor,
-}: Omit<User, 'id'>) {
+}: {
+  name?: string;
+  surname?: string;
+  age?: number | string;
+  email?: string;
+  about?: string;
+  iconColor?: string;
+}) {
   if (
     typeof name === 'string' &&
     name.trim() !== '' &&

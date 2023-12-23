@@ -20,19 +20,24 @@ export function FormPair({
   placeHolder,
   isFocused,
 }: Props) {
+  // Creating a reference to the input element for focusing.
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Effect to focus the input element if isFocused send via props.
   useEffect(() => {
     if (inputRef.current && isFocused) {
       inputRef.current.focus();
     }
   }, [isFocused]);
 
+  // Rendering the component JSX.
   return (
     <div className={style.pair}>
+      {/* Label for the input field */}
       <label htmlFor={id} className={style.pair__label}>
         {text}:
       </label>
+      {/* Input field */}
       <input
         type={type}
         id={id}
@@ -42,7 +47,7 @@ export function FormPair({
         required
         className={style.pair__input}
         placeholder={placeHolder}
-        ref={inputRef}
+        ref={inputRef} // Using the ref to focus the input element
       />
     </div>
   );
