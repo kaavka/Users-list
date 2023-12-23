@@ -1,0 +1,10 @@
+.button {
+  background-color: var(--color-secondary);
+  border: none;
+  cursor: pointer;
+  transition-duration: var(--effect-duration);
+
+  &:hover {
+    scale: 1.2;
+  }
+}

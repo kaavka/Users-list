@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
-import './globals.css';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
+import './globals.scss';
+import style from './layout.module.scss';
 
 const mono = Space_Mono({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={mono.className}>
         <Header />
-        <main>{children}</main>
+        <main className={style.main}>{children}</main>
         <Footer />
       </body>
     </html>

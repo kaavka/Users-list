@@ -1,0 +1,13 @@
+.pair {
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    font-weight: 700;
+    text-align: start;
+  }
+
+  &__value {
+    text-align: end;
+  }
+}

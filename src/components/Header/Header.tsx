@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import style from './style.module.scss';
 
 export function Header() {
   return (
-    <header>
-      <Link href={'/'}>
-        <h2>Logo</h2>
+    <header className={style.header}>
+      <Link href={'/'} className={style.header__logo}>
+        <h2 className={style.header__logo}>Logo</h2>
       </Link>
     </header>
   );

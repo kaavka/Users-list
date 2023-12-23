@@ -1,0 +1,22 @@
+@import '/src/styles/mixins.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: var(--header-height-mobile);
+  background-color: var(--color-accent-main);
+  display: flex;
+  align-items: center;
+  padding: var(--header-padding);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &__logo {
+    color: var(--color-secondary);
+  }
+
+  @include onTablet {
+    height: var(--header-height-tablet);
+  }
+}
