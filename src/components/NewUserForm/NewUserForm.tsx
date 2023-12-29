@@ -4,6 +4,7 @@ import {
   FormEvent,
   KeyboardEventHandler,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import { FormPair } from '../FormPair/FormPair';
@@ -24,6 +25,7 @@ interface Props {
 export function NewUserForm({ initialUser, handleClose }: Props) {
   // Accessing the Next.js router instance.
   const router = useRouter();
+  const formRef = useRef<HTMLFormElement>(null);
 
   // State to manage error messages in the form.
   const [errorMessage, setErrorMessage] = useState('');
@@ -45,6 +47,17 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
   // Effect to set 'isMounted' to true when the component mounts.
   useEffect(() => {
     setIsMounted(true);
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formRef.current && !formRef.current.contains(event.target as Node)) {
+        close();
+      }
+    };
+    document.addEventListener('click', handleClickOutside, true);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
   }, []);
 
   // Function to handle form submission.
@@ -101,6 +114,7 @@ export function NewUserForm({ initialUser, handleClose }: Props) {
   return (
     <div className={style.container}>
       <form
+        ref={formRef}
         onSubmit={onSubmit}
         onKeyDown={handleEscape}
         className={classNames(style.modal, {
