@@ -14,18 +14,11 @@ To run the project locally, follow these steps:
 
    ````
 
-2. **Install dependencies:**
+2. **Install dependencies / run the project:**
 
    ```bash
-   Copy code
    npm install
-   Run the project:
-   ```
-
-   ```bash
-   Copy code
-   npm start
-   The application should now be accessible at http://localhost:3000. Open this URL in your browser to explore the user management system.
+   npm run dev
    ```
 
 ## Components

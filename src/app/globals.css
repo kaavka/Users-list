@@ -1,0 +1,41 @@
+:root {
+  --color-accent-main: #49108b;
+  --color-accent-secondary: #7e30e1;
+  --color-main: #e26ee5;
+  --color-secondary: #f3f8ff;
+  --header-height-mobile: 40px;
+  --header-height-tablet: 60px;
+  --header-padding: 15px;
+  --footer-padding: 15px;
+  --add-user-button-height: 65px;
+  --rounded-radius: 50%;
+  --effect-duration: 0.3s;
+  --footer-developed-gap: 10px;
+  --form-pair-padding: 5px;
+  --card-width: 270px;
+  --card-padding: 10px;
+  --card-height: 200px;
+  --card-border-radius: 5px;
+  --card-title-gap: 10px;
+  --modal-width: 400px;
+  --modal-gap: 5px;
+  --modal-max-height: 265px;
+  --modal-button-width: 48%;
+  --modal-button-height: 30px;
+  --modal-error-padding: 20px;
+  --modal-error-absolute-position-top: -70px;
+  --modal-error-absolute-position-right: -350px;
+  --user-icon-size: 60px;
+  --scroll-width: 4px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}/*# sourceMappingURL=globals.css.map */

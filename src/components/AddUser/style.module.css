@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--color-secondary);
+  height: var(--add-user-button-height);
+  border: 2px solid black;
+  border-radius: var(--rounded-radius);
+  transition-duration: var(--effect-duration);
+  z-index: 0;
+}
+.button:hover {
+  scale: 1.1;
+  rotate: 90deg;
+  border-color: var(--color-secondary);
+}/*# sourceMappingURL=style.module.css.map */

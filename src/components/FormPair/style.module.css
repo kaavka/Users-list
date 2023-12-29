@@ -1,0 +1,25 @@
+.pair {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+}
+.pair__label {
+  font-weight: 700;
+}
+.pair__input {
+  outline: none;
+  padding: var(--form-pair-padding);
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition-duration: 0.3s;
+}
+.pair__input:focus {
+  color: var(--color-secondary);
+  background-color: var(--color-main);
+}
+.pair__input:focus::-moz-placeholder {
+  visibility: hidden;
+}
+.pair__input:focus::placeholder {
+  visibility: hidden;
+}/*# sourceMappingURL=style.module.css.map */

@@ -1,0 +1,11 @@
+.pair {
+  display: flex;
+  justify-content: space-between;
+}
+.pair__label {
+  font-weight: 700;
+  text-align: start;
+}
+.pair__value {
+  text-align: end;
+}/*# sourceMappingURL=style.module.css.map */

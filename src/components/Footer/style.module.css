@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--footer-padding);
+  background-color: var(--color-accent-main);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.footer__developed {
+  color: var(--color-secondary);
+  display: flex;
+  gap: var(--footer-developed-gap);
+}/*# sourceMappingURL=style.module.css.map */

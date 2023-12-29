@@ -1,0 +1,6 @@
+.main {
+  padding: 80px 10px 30px;
+  min-height: 94vh;
+  transition-duration: 0.3s;
+  background-color: var(--color-accent-secondary);
+}/*# sourceMappingURL=layout.module.css.map */
